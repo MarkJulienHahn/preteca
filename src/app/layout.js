@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "KUEPPEL & SCHEFFLER",
+  title: "PRETECTA",
   description:
     "Full-service event agency for event management, event organization, event coordination, guest management, guest relations, guest services, and invitation management in Berlin.",
 };

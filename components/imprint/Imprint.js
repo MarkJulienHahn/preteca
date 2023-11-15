@@ -35,9 +35,11 @@ const Imprint = ({
           <>
             <Headline title={""} close={() => setShowImprint(false)} />
             <div className={styles.textWrapper}>
-              <PortableText
-                content={lang == "en" ? imprint.textEn : imprint.textDe}
-              />
+              {imprint?.textDe && imprint?.textEn && (
+                <PortableText
+                  content={lang == "en" ? imprint?.textEn : imprint?.textDe}
+                />
+              )}
             </div>
           </>
         )}
@@ -45,9 +47,11 @@ const Imprint = ({
           <>
             <Headline title={""} close={() => setShowPrivacy(false)} />
             <div className={styles.textWrapper}>
-              <PortableText
-                content={lang == "en" ? privacy.textEn : privacy.textDe}
-              />
+              {privacy?.textDe && privacy?.textEn && (
+                <PortableText
+                  content={lang == "en" ? privacy?.textEn : privacy?.textDe}
+                />
+              )}
             </div>
           </>
         )}

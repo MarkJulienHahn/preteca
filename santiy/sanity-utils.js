@@ -1,7 +1,7 @@
 import { createClient, groq } from "next-sanity";
 
 const client = createClient({
-  projectId: "saau1ctb",
+  projectId: '3w50187z',
   dataset: "production",
   apiVersion: "2023-09-26",
 });

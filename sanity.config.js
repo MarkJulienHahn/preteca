@@ -11,9 +11,9 @@ const singletonActions = new Set(["publish", "discardChanges", "restore"]);
 const singletonTypes = new Set(["settings"]);
 
 const config = defineConfig({
-  projectId: "saau1ctb",
+  projectId: "3w50187z",
   dataset: "production",
-  title: "Knueppel & Scheffler",
+  title: "Pretecta",
   apiVersion: "2023-09-26",
   basePath: "/admin",
   plugins: [

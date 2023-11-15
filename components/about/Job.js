@@ -11,17 +11,17 @@ const Job = ({ lang, jobs, jobIndex, showJobs, setShowJobs }) => {
       <div className={styles.wrapper}>
         <p>Open Positions</p>
         <h1 className={styles.header}>
-          {lang == "en" ? job.jobTitleEn : job.jobTitleDe}{" "}
+          {lang == "en" ? job?.jobTitleEn : job?.jobTitleDe}{" "}
           {job?.mfd ? "(m/f/d)" : ""}
         </h1>
         <div className={styles.text}>
-          <PortableText content={lang == "en" ? job.textEn : job.textDe} />
+          {job?.textEn && job?.textDe && <PortableText content={lang == "en" ? job?.textEn : job?.textDe} />}Ï
         </div>
 
         <h1 className={styles.link}>
           <a
             href={`mailto:jobs@knueppel-scheffler.com?subject=${
-              lang == "en" ? job.jobTitleEn : job.jobTitleDe
+              lang == "en" ? job?.jobTitleEn : job?.jobTitleDe
             } application`}
           >
             {lang == "en" ? "Apply Now" : "Jetzt bewerben"}

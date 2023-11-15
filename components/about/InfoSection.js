@@ -25,7 +25,7 @@ const InfoSection = ({
   showAbout,
   scrolling,
 }) => {
-  const images = [about.aboutImage, about.clientsImage, about.jobsImage];
+  const images = [about?.aboutImage, about?.clientsImage, about?.jobsImage];
 
   const [showJobs, setShowJobs] = useState(false);
   const [jobIndex, setJobIndex] = useState(0);
@@ -154,50 +154,56 @@ const InfoSection = ({
               <div className={styles.imageCredit}>
                 © {images[imageIndex]?.credit}
               </div>
-              <Image
-                fill
-                src={urlFor(images[0].url.url).width(1000).url()}
-                style={{
-                  position: "absolute",
-                  top: "0",
-                  left: "0",
-                  objectFit: "cover",
-                  opacity: imageIndex == 0 ? "1" : "0",
-                }}
-                alt={images[0].alt ? images[0].alt : "Knueppel & Scheffler"}
-              />
-              <Image
-                fill
-                src={urlFor(images[1].url.url).width(1000).url()}
-                style={{
-                  position: "absolute",
-                  top: "0",
-                  left: "0",
-                  objectFit: "cover",
-                  opacity: imageIndex == 1 ? "1" : "0",
-                }}
-                alt={images[1].alt ? images[1].alt : "Knueppel & Scheffler"}
-              />
-              <Image
-                fill
-                src={urlFor(images[2].url.url).width(1000).url()}
-                style={{
-                  position: "absolute",
-                  top: "0",
-                  left: "0",
-                  objectFit: "cover",
-                  opacity: imageIndex == 2 ? "1" : "0",
-                }}
-                alt={images[2].alt ? images[2].alt : "Knueppel & Scheffler"}
-              />
+              {images.length && (
+                <>
+                  <Image
+                    fill
+                    src={urlFor(images[0].url.url).width(1000).url()}
+                    style={{
+                      position: "absolute",
+                      top: "0",
+                      left: "0",
+                      objectFit: "cover",
+                      opacity: imageIndex == 0 ? "1" : "0",
+                    }}
+                    alt={images[0].alt ? images[0].alt : "Knueppel & Scheffler"}
+                  />
+                  <Image
+                    fill
+                    src={urlFor(images[1].url.url).width(1000).url()}
+                    style={{
+                      position: "absolute",
+                      top: "0",
+                      left: "0",
+                      objectFit: "cover",
+                      opacity: imageIndex == 1 ? "1" : "0",
+                    }}
+                    alt={images[1].alt ? images[1].alt : "Knueppel & Scheffler"}
+                  />
+                  <Image
+                    fill
+                    src={urlFor(images[2].url.url).width(1000).url()}
+                    style={{
+                      position: "absolute",
+                      top: "0",
+                      left: "0",
+                      objectFit: "cover",
+                      opacity: imageIndex == 2 ? "1" : "0",
+                    }}
+                    alt={images[2].alt ? images[2].alt : "Knueppel & Scheffler"}
+                  />
+                </>
+              )}
             </div>
           </div>
         )}
         <div>
           <div className={styles.infoText} ref={aboutRef}>
-            <PortableText
-              content={lang == "en" ? about.textEn : about.textDe}
-            />
+            {about?.textEn && about?.textDe && (
+              <PortableText
+                content={lang == "en" ? about?.textEn : about?.textDe}
+              />
+            )}
           </div>
           <div className={styles.clientsWrapper} ref={clientScrollRef}>
             <div ref={clientRef}>
@@ -252,19 +258,19 @@ const InfoSection = ({
                 setTitle={setTitle}
               /> */}
 
-              <h1> {contact.street}</h1>
+              <h1> {contact?.street}</h1>
               <h1>
-                {contact.zip} {contact.city}
+                {contact?.zip} {contact?.city}
               </h1>
               <br />
               <br />
-              <h1>{contact.phone}</h1>
+              <h1>{contact?.phone}</h1>
               <h1>
-                <a href={`mailto:${contact.email}`}>{contact.email}</a>
+                <a href={`mailto:${contact?.email}`}>{contact?.email}</a>
               </h1>
               <br />
               <br />
-              {contact.links.map((link, i) => (
+              {contact?.links.map((link, i) => (
                 <div key={i}>
                   <h1>
                     <a href={link.link} target="blank" rel="_noreferrer">
