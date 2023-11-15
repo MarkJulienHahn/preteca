@@ -204,7 +204,7 @@ const InfoSection = ({
                       opacity: imageIndex == 2 ? "1" : "0",
                     }}
                     alt={
-                      images[2]?.alt ? images[2].alt : "Knueppel & Scheffler"
+                      images[2]?.alt ?  images[2].alt : "Knueppel & Scheffler"
                     }
                   />
                 </>
