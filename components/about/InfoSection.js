@@ -158,7 +158,10 @@ const InfoSection = ({
                 <>
                   <Image
                     fill
-                    src={urlFor(images[0].url.url).width(1000).url()}
+                    src={
+                      images[0]?.url.url &&
+                      urlFor(images[0].url.url).width(1000).url()
+                    }
                     style={{
                       position: "absolute",
                       top: "0",
@@ -166,11 +169,16 @@ const InfoSection = ({
                       objectFit: "cover",
                       opacity: imageIndex == 0 ? "1" : "0",
                     }}
-                    alt={images[0].alt ? images[0].alt : "Knueppel & Scheffler"}
+                    alt={
+                      images[0]?.alt ? images[0].alt : "Knueppel & Scheffler"
+                    }
                   />
                   <Image
                     fill
-                    src={urlFor(images[1].url.url).width(1000).url()}
+                    src={
+                      images[1]?.url.url &&
+                      urlFor(images[1].url.url).width(1000).url()
+                    }
                     style={{
                       position: "absolute",
                       top: "0",
@@ -178,11 +186,16 @@ const InfoSection = ({
                       objectFit: "cover",
                       opacity: imageIndex == 1 ? "1" : "0",
                     }}
-                    alt={images[1].alt ? images[1].alt : "Knueppel & Scheffler"}
+                    alt={
+                      images[1]?.alt ? images[1].alt : "Knueppel & Scheffler"
+                    }
                   />
                   <Image
                     fill
-                    src={urlFor(images[2].url.url).width(1000).url()}
+                    src={
+                      images[2]?.url.url &&
+                      urlFor(images[2].url.url).width(1000).url()
+                    }
                     style={{
                       position: "absolute",
                       top: "0",
@@ -190,7 +203,9 @@ const InfoSection = ({
                       objectFit: "cover",
                       opacity: imageIndex == 2 ? "1" : "0",
                     }}
-                    alt={images[2].alt ? images[2].alt : "Knueppel & Scheffler"}
+                    alt={
+                      images[2]?.alt ? images[2].alt : "Knueppel & Scheffler"
+                    }
                   />
                 </>
               )}
