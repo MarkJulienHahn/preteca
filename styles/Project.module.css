@@ -1,0 +1,206 @@
+.wrapper {
+  position: fixed;
+  background: var(--white);
+  width: 100%;
+  transition: top 0.5s ease;
+  z-index: 150;
+  height: 100vh;
+  overflow: scroll;
+  overscroll-behavior: contain;
+}
+
+.inner {
+  position: relative;
+}
+
+.active {
+  top: 0;
+  overscroll-behavior-y: none;
+}
+
+.inActive {
+  top: 100vh;
+}
+
+.image {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.imageCredit {
+  z-index: 2000;
+  color: white;
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  font-size: 8px;
+  letter-spacing: 0.8px;
+  opacity: 0.8;
+  filter: drop-shadow(3px 3px 3px black);
+  font-family: sans-serif;
+}
+
+.infoOuter {
+  position: fixed;
+  bottom: 0;
+  transition: opacity 0.5s ease;
+  z-index: 250;
+  pointer-events: none;
+}
+
+.info {
+  /* height: 600px; */
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100vw;
+  color: white;
+  animation: fadeIn 0.5s ease;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  transition: all 0.5s ease;
+  pointer-events: none;
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)); */
+}
+
+.background {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 800px;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  z-index: 1;
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.info h1 {
+  text-transform: uppercase;
+  pointer-events: auto;
+  cursor: pointer;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.credits {
+  text-align: center;
+  font-size: var(--font-size-M);
+  line-height: var(--line-height-M);
+  margin: 15px 100px 0;
+  /* overflow: hidden; */
+  transition: all 0.5s ease;
+  /* padding-bottom: 30px; */
+}
+
+.credits p {
+  letter-spacing: 0.5px;
+}
+
+.infoButton {
+  cursor: pointer;
+  pointer-events: auto;
+  letter-spacing: 0.5px;
+}
+
+.infoButton:hover {
+  font-family: "ItalianGaramondItalic";
+}
+
+.footerWrapper {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  z-index: 1000;
+  transition: all 0.5s ease;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+  pointer-events: none;
+}
+
+.closeContainer {
+  position: fixed;
+  right: 40px;
+  top: 40px;
+  z-index: 100;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  margin-top: 21px;
+  cursor: pointer;
+  mix-blend-mode: difference;
+}
+
+.leftright {
+  transform: rotate(45deg);
+}
+
+.rightleft {
+  transform: rotate(-45deg);
+}
+
+.rightleft,
+.leftright {
+  height: 2px;
+  width: 50px;
+  position: absolute;
+  background-color: white;
+  border-radius: 2px;
+
+  transition: all 0.3s ease-out;
+}
+
+.closeContainer:hover .leftright {
+  transform: rotate(135deg);
+  background-color: white;
+}
+.closeContainer:hover .rightleft {
+  transform: rotate(45deg);
+  background-color: white;
+}
+.closeContainer:hover label {
+  opacity: 1;
+}
+@media screen and (max-width: 1000px) {
+  .footerWrapper {
+    height: 80vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .image {
+    height: 66vh;
+  }
+  .info {
+    padding-bottom: 25px;
+  }
+  .info h1,
+  .credits {
+    font-size: var(--font-size-S);
+    line-height: var(--line-height-S);
+    margin: 0px;
+  }
+
+  .closeContainer {
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 25px;
+  }
+  .rightleft,
+  .leftright {
+    width: 30px;
+  }
+}

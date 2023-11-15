@@ -1,0 +1,40 @@
+.wrapper {
+  position: fixed;
+  width: 100vw;
+  transition: top 0.5s ease;
+  z-index: 1500;
+  height: 100vh;
+  overflow: scroll;
+  overscroll-behavior: contain;
+}
+
+.inner {
+  background: var(--white);
+}
+
+.active {
+  top: 0;
+}
+
+.inActive {
+  top: 100vh;
+}
+
+.textWrapper {
+  width: 100vw;
+  padding: var(--space-S);
+  width: 50%;
+  min-height: 100vh;
+}
+
+.textWrapper p {
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .textWrapper {  
+    width: 100%;
+    padding-top: 40px;
+    line-height: 20px;
+  }
+}

@@ -1,0 +1,117 @@
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.logo {
+  width: 80vw;
+  height: 100px;
+  filter: drop-shadow(0px 0px 14px rgba(0, 0, 0, 0.5));
+  position: relative;
+  transition: opacity 1s ease;
+}
+
+.logo img {
+  position: relative !important;
+}
+
+.logoWrapper {
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeIn 3s ease;
+  animation-fill-mode: forwards;
+  animation-delay: 1.5s;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.arrowWrapper {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transition: opacity 1s ease;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.arrow {
+  color: white;
+  font-size: 26pt;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  animation: 1s ease-in 1s infinite alternate both running upDown;
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+.imgWrapper {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.imageCredit {
+  z-index: 2000;
+  color: white;
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  font-size: 8px;
+  letter-spacing: 0.8px;
+  opacity: 0.8;
+  filter: drop-shadow(3px 3px 3px black);
+  font-family: sans-serif;
+}
+
+.swiperControls {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+}
+.swiperPrev,
+.swiperNext {
+  width: 50vw;
+  height: 100%;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper,
+  .imgWrapper {
+    height: 90vh;
+  }
+
+  .logo {
+    width: 100vw;
+    padding: 0 20px;
+  }
+
+  .arrowWrapper {
+    display: none;
+  }
+}

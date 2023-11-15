@@ -1,0 +1,104 @@
+:root {
+  --white: #f8f8f8;
+  --black: #363636;
+
+  --space-S: 40px;
+  --space-M: 120px;
+
+  --font-size-M: 28px;
+  --line-height-M: 35px;
+
+  --font-size-L: 44px;
+  --line-height-L: 45px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "ItalianGaramond";
+  font-style: normal;
+  src: url(../../public/fonts/EBGaramond-Regular.ttf) format("truetype");
+  /* url(../public/fonts/ProtestGrotesk.woff) format("woff"),
+    url(../public/fonts/ProtestGrotesk.woff2) format("woff2"); */
+}
+
+@font-face {
+  font-family: "ItalianGaramondItalic";
+  font-style: normal;
+  src: url(../../public/fonts/EBGaramond-Italic.ttf) format("truetype");
+  /* url(../public/fonts/ProtestGrotesk.woff) format("woff"),
+    url(../public/fonts/ProtestGrotesk.woff2) format("woff2"); */
+}
+
+@font-face {
+  font-family: "ItalianGaramondMedium";
+  font-style: normal;
+  src: url(../../public/fonts/EBGaramond-Medium.ttf) format("truetype");
+  /* url(../public/fonts/ProtestGrotesk.woff) format("woff"),
+    url(../public/fonts/ProtestGrotesk.woff2) format("woff2"); */
+}
+
+@font-face {
+  font-family: "ItalianGaramondMediumItalic";
+  font-style: normal;
+  src: url(../../public/fonts/EBGaramond-MediumItalic.ttf) format("truetype");
+  /* url(../public/fonts/ProtestGrotesk.woff) format("woff"),
+    url(../public/fonts/ProtestGrotesk.woff2) format("woff2"); */
+}
+
+::selection { color: rgba(0,0,0,0.15); }
+
+html,
+body {
+  max-width: 100vw;
+  /* overflow-x: hidden; */
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 2%;
+}
+
+body {
+  color: var(--black);
+  background: var(--white);
+  font-family: "ItalianGaramond";
+  overscroll-behavior-y: none;
+}
+
+h1 {
+  font-size: var(--font-size-L);
+  line-height: var(--line-height-L);
+  font-weight: 100;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  font-family: "ItalianGaramondItalic";
+}
+
+.swiper {
+  overflow: hidden !important;
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --space-S: 10px;
+    --space-M: 120px;
+  
+    --font-size-M: 28px;
+    --line-height-M: 35px;
+  
+    --font-size-L: 25px;
+    --line-height-L: 30px;
+  }
+  body {
+    font-size: 15px;
+  }
+}
