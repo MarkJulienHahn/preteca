@@ -285,7 +285,7 @@ const InfoSection = ({
               </h1>
               <br />
               <br />
-              {contact?.links.map((link, i) => (
+              {contact?.links?.map((link, i) => (
                 <div key={i}>
                   <h1>
                     <a href={link.link} target="blank" rel="_noreferrer">
