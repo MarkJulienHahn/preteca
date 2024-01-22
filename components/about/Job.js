@@ -9,18 +9,21 @@ const Job = ({ lang, jobs, jobIndex, showJobs, setShowJobs }) => {
     <>
       {showJobs && <Headline close={() => setShowJobs(false)} />}
       <div className={styles.wrapper}>
-        <p>Open Positions</p>
+        <p>{lang == "en" ? "Open Positions" : "Offene Stellen"}</p>
         <h1 className={styles.header}>
           {lang == "en" ? job?.jobTitleEn : job?.jobTitleDe}{" "}
           {job?.mfd ? "(m/f/d)" : ""}
         </h1>
         <div className={styles.text}>
-          {job?.textEn && job?.textDe && <PortableText content={lang == "en" ? job?.textEn : job?.textDe} />}Ï
+          {job?.textEn && job?.textDe && (
+            <PortableText content={lang == "en" ? job?.textEn : job?.textDe} />
+          )}
+          Ï
         </div>
 
         <h1 className={styles.link}>
           <a
-            href={`mailto:jobs@knueppel-scheffler.com?subject=${
+            href={`mailto:info@pretecta.de?subject=${
               lang == "en" ? job?.jobTitleEn : job?.jobTitleDe
             } application`}
           >

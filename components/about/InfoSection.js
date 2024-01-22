@@ -113,6 +113,8 @@ const InfoSection = ({
     setTitle(lang == "en" ? "About" : "Über Uns");
   }, [lang]);
 
+  console.log(about)
+
   return (
     <div>
       <div ref={aboutScrollRef}>
