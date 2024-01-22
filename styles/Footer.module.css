@@ -13,7 +13,7 @@
 
 .logo {
   width: 80vw;
-  height: 100px;
+  height: 140px;
   position: absolute;
   bottom: calc(50vh - 40px);
   transition: opacity 2s ease;
