@@ -76,7 +76,7 @@ const InfoSection = ({
   useEffect(() => {
     aboutVisible &&
       (setTitle(lang == "en" ? "About" : "Über Uns"), setImageIndex(0));
-    clientVisible &&
+    clientVisible && !aboutVisible &&
       (setTitle(lang == "en" ? "Clients" : "Kunden"), setImageIndex(1));
 
     jobsVisible && setTitle(lang == "en" ? "Jobs" : "Jobs");
@@ -93,14 +93,15 @@ const InfoSection = ({
   }, [aboutVisible, clientVisible, jobsVisible, contactVisible]);
 
   useEffect(() => {
+    scrollTarget == "" &&
+      aboutScrollRef.current?.scrollIntoView({ behavior: "smooth" });
     scrollTarget == "clients" &&
       clientScrollRef.current?.scrollIntoView({ behavior: "smooth" });
     scrollTarget == "jobs" &&
       jobsScrollRef.current?.scrollIntoView({ behavior: "smooth" });
     scrollTarget == "contact" &&
       contactScrollRef.current?.scrollIntoView({ behavior: "smooth" });
-    scrollTarget == "" &&
-      aboutScrollRef.current?.scrollIntoView({ behavior: "smooth" });
+
     !showAbout && setTimeout(resetScroll, 500);
   }, [showAbout]);
 
@@ -112,8 +113,6 @@ const InfoSection = ({
   useEffect(() => {
     setTitle(lang == "en" ? "About" : "Über Uns");
   }, [lang]);
-
-  console.log(about)
 
   return (
     <div>
@@ -206,7 +205,7 @@ const InfoSection = ({
                       opacity: imageIndex == 2 ? "1" : "0",
                     }}
                     alt={
-                      images[2]?.alt ?  images[2].alt : "Knueppel & Scheffler"
+                      images[2]?.alt ? images[2].alt : "Knueppel & Scheffler"
                     }
                   />
                 </>
