@@ -23,7 +23,7 @@ const Job = ({ lang, jobs, jobIndex, showJobs, setShowJobs }) => {
 
         <h1 className={styles.link}>
           <a
-            href={`mailto:info@pretecta.de?subject=${
+            href={`mailto:jobs@pretecta.de?subject=${
               lang == "en" ? job?.jobTitleEn : job?.jobTitleDe
             } application`}
           >
